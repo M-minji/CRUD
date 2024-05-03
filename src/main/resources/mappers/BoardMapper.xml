@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.minji.crud.board.BoardMapper">
+
+    <insert id="postBoard1">      <!-- 게시글 올리기 첫번째 방법 -->
+        INSERT INTO board
+        (writer_id, title, contents)
+        VALUES
+        (#{writerId}, #{title}, #{contents})
+    </insert>
+
+    <insert id="postBoard2">       <!-- 게시글 올리기 두번째 방법 -->
+        INSERT INTO board
+        SET writer_id = #{writerId}
+            , title = #{title}
+            , contents = #{contents}
+    </insert>
+
+
+</mapper>

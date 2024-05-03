@@ -1,0 +1,10 @@
+USE board;
+
+CREATE TABLE board (
+       board_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+       writer_id BIGINT NOT NULL,
+       title VARCHAR(30) NOT NULL,
+       contents VARCHAR(100) NOT NULL,
+       created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+       updated_at DATETIME ON UPDATE CURRENT_TIMESTAMP
+);
