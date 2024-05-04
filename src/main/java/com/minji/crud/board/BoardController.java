@@ -1,11 +1,11 @@
 package com.minji.crud.board;
 
+import com.minji.crud.board.model.GetBoardRes;
 import com.minji.crud.board.model.PostBoardReq;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,6 +21,16 @@ public class BoardController {
     @PostMapping("post2")
     public int postBoard2 (@RequestBody PostBoardReq param) {
         return service.postBoard2(param);
+    }
+
+    @GetMapping("{boardId}")
+    public GetBoardRes getBoardOne (@PathVariable long boardId) {
+        return service.getBoardOne(boardId);
+    }
+
+    @GetMapping
+    public List<GetBoardRes> getBoardList (){
+        return service.getBoardList();
     }
 
 

@@ -17,5 +17,17 @@
             , contents = #{contents}
     </insert>
 
+    <select id="getBoardOne">       <!-- 게시글 한개만 불러오기 -->
+        SELECT board_id AS boardId, writer_id AS writerId, title, contents, created_at AS createdAt, updated_at AS updatedAt
+        FROM board
+        WHERE board_id = #{boardId}
+    </select>
+
+    <select id="getBoardList">       <!-- 게시글 여러개 최신순으로 불러오기 -->
+        SELECT board_id AS boardId, writer_id AS writerId, title, contents, created_at AS createdAt, updated_at AS updatedAt
+        FROM board
+        ORDER BY board_id DESC
+    </select>
+
 
 </mapper>

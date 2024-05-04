@@ -8,3 +8,7 @@ spring:
     password: maria1209
 mybatis:
   mapper-locations: mappers/**/*.xml
+
+springdoc:
+  swagger-ui:
+    path: /swagger
