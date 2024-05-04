@@ -42,4 +42,9 @@
         WHERE board_id = #{boardId}
     </update>
 
+    <delete id="delBoard">       <!-- 게시글 삭제 -->
+        DELETE FROM board
+        WHERE board_id = #{boardId}
+    </delete>
+
 </mapper>

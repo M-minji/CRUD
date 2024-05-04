@@ -32,4 +32,8 @@ public class BoardService {
     public int putBoard(PutBoardReq param) {
         return mapper.putBoard(param);
     }
+
+    public int delBoard(long boardId) {
+        return mapper.delBoard(boardId);
+    }
 }

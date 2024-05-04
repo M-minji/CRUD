@@ -38,6 +38,10 @@ public class BoardController {
     public int putBoard(@RequestBody PutBoardReq param) {
         return service.putBoard(param);
     }
+    @DeleteMapping(name = "board_id")
+    public int delBoard(@RequestParam long boardId) {
+        return service.delBoard(boardId);
+    }
 
 
 }
