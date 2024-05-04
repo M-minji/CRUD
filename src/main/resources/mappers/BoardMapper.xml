@@ -29,5 +29,17 @@
         ORDER BY board_id DESC
     </select>
 
+    <update id="putBoard">       <!-- 게시글 수정하기 -->
+        UPDATE board
+        <set>
+            <if test="title != null and title != ''">
+                , title = #{title}
+            </if>
+            <if test="contents != null and contents != ''">
+                , contents = #{contents}
+            </if>
+        </set>
+        WHERE board_id = #{boardId}
+    </update>
 
 </mapper>

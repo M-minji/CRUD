@@ -2,6 +2,7 @@ package com.minji.crud.board;
 
 import com.minji.crud.board.model.GetBoardRes;
 import com.minji.crud.board.model.PostBoardReq;
+import com.minji.crud.board.model.PutBoardReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +27,9 @@ public class BoardService {
 
     public List<GetBoardRes> getBoardList () {
         return mapper.getBoardList();
+    }
+
+    public int putBoard(PutBoardReq param) {
+        return mapper.putBoard(param);
     }
 }

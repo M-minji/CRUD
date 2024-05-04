@@ -2,6 +2,7 @@ package com.minji.crud.board;
 
 import com.minji.crud.board.model.GetBoardRes;
 import com.minji.crud.board.model.PostBoardReq;
+import com.minji.crud.board.model.PutBoardReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,6 +32,11 @@ public class BoardController {
     @GetMapping
     public List<GetBoardRes> getBoardList (){
         return service.getBoardList();
+    }
+
+    @PutMapping
+    public int putBoard(@RequestBody PutBoardReq param) {
+        return service.putBoard(param);
     }
 
 
